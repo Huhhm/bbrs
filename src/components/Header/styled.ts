@@ -3,15 +3,15 @@ import styled from 'styled-components/native';
 export const container = styled.View`
   flex: 1;
 `;
-export const header = styled.View`
+export const Wrapper = styled.View`
   padding-top: 10px;
   padding-bottom: 10px;
   align-items: center;
   flex-direction: row;
   flex-wrap: wrap;
 `;
-export const headerBg = styled.View`
-  background-color: #00591c;
+export const Container = styled.View`
+  background-color:${props => props.theme.colors.darkGreen};
 `;
 export const headerGridLeft = styled.View`
   width: 40%;

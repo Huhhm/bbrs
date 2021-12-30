@@ -37,7 +37,7 @@ export const tokens = {
   font_size: {
     ...fontSize,
   },
-  screen_width: {
+  screen_size: {
     ...screenSize,
   },
   spacing: {

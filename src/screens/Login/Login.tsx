@@ -10,21 +10,22 @@ import {
   Dimensions,
 } from 'react-native';
 
-import LoginHeader from '../components/LoginHeader';
-import LoginBody from '../components/LoginBody';
+import Header from '../../components/Header';
+import LoginBody from '../../components/LoginBody';
 
 const LoginScreen = ({navigation}) => {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView>
-        <LoginHeader />
+        <Header />
         <LoginBody />
 
-        <Button onPress={() => navigation.navigate('ListStudent')}  title="ListStudent" />
+       
       </ScrollView>
     </SafeAreaView>
   );
 };
+
 export default LoginScreen;
 
 const styles = StyleSheet.create({
