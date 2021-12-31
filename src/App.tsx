@@ -24,6 +24,7 @@ const App = () => {
             />
             <NavigationContainer>
             <Navigation />
+            
             </NavigationContainer>
             
           </ThemeProvider>

@@ -2,6 +2,7 @@ import {Dimensions} from 'react-native';
 
 const {width, height} = Dimensions.get('window');
 
+
 export const screenSize = {
   width,
   height,
@@ -29,6 +30,7 @@ export const iconSize = {
   small: 14,
   medium: 24,
   large: 34,
+  extraLarge:44,
 };
 
 export const borderRadius = {
