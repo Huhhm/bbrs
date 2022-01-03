@@ -6,6 +6,8 @@ export const Container = styled.View`
 export const Wrapper = styled.View`
   flex-direction: row;
   flex-wrap: wrap;
+  align-items: flex-start;
+  padding-bottom: 50px;
 `;
 export const Left = styled.View`
   width: ${props => props.theme.screen_size.width * 0.55}px;
@@ -26,7 +28,7 @@ export const Right = styled.View`
 export const RightUser = styled.View`
   margin-left: ${props => props.theme.spacing[4]}px;
   margin-right: ${props => props.theme.spacing[4]}px;
-  align-items:center;
+  align-items: center;
   margin-top: ${props => props.theme.spacing[2.5]}px;
 `;
 export const TeacherImage = styled.Image`
@@ -42,4 +44,5 @@ export const RightRow2 = styled.View`
   margin-right: ${props => props.theme.spacing[2]}px;
   border-radius: ${props => props.theme.border_radius.large}px;
   flex-direction: row;
+  align-items: flex-start;
 `;
