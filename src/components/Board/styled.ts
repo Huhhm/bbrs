@@ -24,12 +24,15 @@ export const LeftBoard = styled.View`
 `;
 export const Right = styled.View`
   width: ${props => props.theme.screen_size.width * 0.45}px;
+  
 `;
 export const RightUser = styled.View`
   margin-left: ${props => props.theme.spacing[4]}px;
   margin-right: ${props => props.theme.spacing[4]}px;
   align-items: center;
   margin-top: ${props => props.theme.spacing[2.5]}px;
+  height:125px;
+  
 `;
 export const TeacherImage = styled.Image`
   flex: 1;

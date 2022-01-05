@@ -6,12 +6,18 @@ import {
   ScrollView,
   Image,
   SafeAreaView,
-  TouchableOpacity
+  TouchableOpacity,
 } from 'react-native';
-
-
+import {
+  MaxVideoView,
+  MinVideoView,
+  RtcConfigure,
+} from 'agora-rn-uikit/Components';
+import {MaxUidConsumer} from 'agora-rn-uikit/src/MaxUidContext';
+import LocalControls from 'agora-rn-uikit/src/Controls/LocalControls';
 import * as S from './styled';
-import {zoomuser, user1,wave,eye,volume} from './images';
+import {zoomuser, user1, wave, eye, volume} from './images';
+
 
 const Board = props => {
   return (
@@ -22,28 +28,28 @@ const Board = props => {
         </S.Left>
         <S.Right>
           <S.RightUser>
-            <S.TeacherImage source={zoomuser} />
+            <MaxUidConsumer >
+              {maxUsers =>
+                maxUsers[0] ? (
+                  <MaxVideoView user={maxUsers[0]} key={maxUsers[0].uid} />
+                ) : null
+              }
+            </MaxUidConsumer>
           </S.RightUser>
           <S.RightRow2>
-            <View style={{width:'35%'}}>
+            <View style={{width: '35%'}}>
               <Image
-                style={{resizeMode: 'contain', borderRadius: 40,width:'100%'}}
+                style={{resizeMode: 'contain', borderRadius: 40, width: '100%'}}
                 source={user1}
               />
             </View>
-            <View style={{width:'65%',flexDirection:'row',marginTop:45}}>
-            <View style={{flex:0.5}}></View>
-            <TouchableOpacity style={{flex:1,marginLeft:8,marginRight:8}}>
-              <Image style={{ resizeMode: 'contain',width:'100%',height:50}} source={wave} />
-            </TouchableOpacity>
-            <TouchableOpacity style={{flex:1,marginLeft:8,marginRight:8}}>
-              <Image style={{ resizeMode: 'contain',width:'100%',height:50}} source={volume} />
-            </TouchableOpacity>
-            <TouchableOpacity style={{flex:1,marginLeft:8,marginRight:8}}>
-              <Image style={{ resizeMode: 'contain',width:'100%',height:50}} source={eye} />
-            </TouchableOpacity>
-            <View style={{flex:0.5}}></View>
-           </View>
+            <View style={{width: '65%', marginTop: 140}}>
+              
+              
+            <LocalControls showButton={true} />
+             
+             
+            </View>
           </S.RightRow2>
         </S.Right>
       </S.Wrapper>
