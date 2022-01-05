@@ -18,7 +18,6 @@ import LocalControls from 'agora-rn-uikit/src/Controls/LocalControls';
 import * as S from './styled';
 import {zoomuser, user1, wave, eye, volume} from './images';
 
-
 const Board = props => {
   return (
     <S.Container>
@@ -28,10 +27,18 @@ const Board = props => {
         </S.Left>
         <S.Right>
           <S.RightUser>
-            <MaxUidConsumer >
+            <MaxUidConsumer>
               {maxUsers =>
                 maxUsers[0] ? (
-                  <MaxVideoView user={maxUsers[0]} key={maxUsers[0].uid} />
+                  <View
+                    style={{
+                      borderRadius: 20,
+                      height: '100%',
+                      width: '100%',
+                      overflow: 'hidden',
+                    }}>
+                    <MaxVideoView user={maxUsers[0]} key={maxUsers[0].uid} />
+                  </View>
                 ) : null
               }
             </MaxUidConsumer>
@@ -44,11 +51,7 @@ const Board = props => {
               />
             </View>
             <View style={{width: '65%', marginTop: 140}}>
-              
-              
-            <LocalControls showButton={true} />
-             
-             
+              <LocalControls showButton={true} />
             </View>
           </S.RightRow2>
         </S.Right>

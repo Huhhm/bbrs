@@ -28,22 +28,18 @@ const StudentLiveScreen = () => {
       appId: '70abdaa4fad34bdc9159df4e68572953',
       channel: 'hello123',
       token:
-        '00670abdaa4fad34bdc9159df4e68572953IAB1C5Ck19QsvHD5WyWBRHg/nk8N6yY7fsWh/ylXDhC0Pt0PGogAAAAAEADKVPAlzoXVYQEAAQDPhdVh',
+        '00670abdaa4fad34bdc9159df4e68572953IAD60uoGGEIA486gZo1GwpMwV5CloZ5SJA3NPVH+0NXHE90PGogAAAAAEADKVPAlNu/WYQEAAQA379Zh',
     },
     styleProps: {
       iconSize: 20,
       maxViewStyles: {
-        height: '100%',
         width: '100%',
-        borderRadius: 200,
       },
       minViewContainer: {
-        borderRadius: 500,
+        width: '100%',
       },
       minViewStyles: {
-        height: 50,
-        borderRadius: 500,
-        width: 50,
+        
       },
       localBtnStyles: {
         muteLocalVideo: {
@@ -88,13 +84,33 @@ const StudentLiveScreen = () => {
             <Board />
           </ScrollView>
           <S.Wrapper>
-            <MinUidConsumer>
-              {minUsers =>
-                minUsers.map(user => (
-                  <MinVideoView user={user} key={user.uid} showOverlay={true} />
-                ))
-              }
-            </MinUidConsumer>
+            <ScrollView
+              showsHorizontalScrollIndicator={false}
+              horizontal={true}
+              style={{
+                width: '100%',
+              }}>
+              <MinUidConsumer>
+                {minUsers =>
+                  minUsers.map(user => (
+                    <View
+                      style={{
+                        borderRadius: 40,
+                        height: 50,
+                        width: 50,
+                        overflow: 'hidden',
+                        backgroundColor: 'red',
+                      }}>
+                      <MinVideoView
+                        user={user}
+                        key={user.uid}
+                        showOverlay={true}
+                      />
+                    </View>
+                  ))
+                }
+              </MinUidConsumer>
+            </ScrollView>
           </S.Wrapper>
         </RtcConfigure>
       </SafeAreaView>
